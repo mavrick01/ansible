@@ -3,10 +3,7 @@
   hosts: localhost
   gather_facts: no
   connection: local
-  vars:
-    netapp_hostname: 192.168.99.50
-    netapp_username: admin
-    netapp_password: netapp123
+
 
   tasks:
 #    - name: License Manager
