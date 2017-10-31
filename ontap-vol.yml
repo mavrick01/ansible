@@ -1,0 +1,23 @@
+---
+- name: NetApp Sample Playbook
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+
+  tasks:
+
+    - name: Volume Manager
+      na_cdot_volume:
+        state: present
+        name: "{{ netapp_vol }}"
+        #new_name: ansibleVolumeRenamed
+        #is_infinite: False
+        #is_online: True
+        aggregate_name: "{{ netapp_aggr }}"
+        size: "{{ netapp_volsize }}"
+        size_unit: mb
+        vserver: "{{ netapp_vfiler }}"
+        hostname: "{{ netapp_hostname }}"
+        username: "{{ netapp_username }}"
+        password: "{{ netapp_password }}"
